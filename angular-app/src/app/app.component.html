@@ -1,5 +1,5 @@
-<div *ngIf="error">{{error}}</div>
+<div *ngIf="error">{{ error }}</div>
 
 <ul *ngIf="restaurants$|async as restaurants">
-  <li *ngFor="let restaurant of restaurants">{{restaurant.name}}</li>
+  <li *ngFor="let restaurant of restaurants">{{ restaurant.Name }} - {{ restaurant.Description }}</li>
 </ul>

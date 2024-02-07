@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, catchError, map, of } from 'rxjs';
 
 interface Restaurant {
-  name: string;
-  description: string;
+  Name: string;
+  Description: string;
 }
 
 interface Entry<T> {
@@ -40,6 +40,8 @@ export class AppComponent implements OnInit
       catchError((error) => this.handleError(error)),
       map((response) => response.data.map((x) => x.attributes))
     );
+
+    this.restaurants$.subscribe(x => console.log(x))
   }
 
   private handleError(error: HttpErrorResponse): Observable<never>
